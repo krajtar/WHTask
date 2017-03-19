@@ -3,6 +3,7 @@ package Pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class logInPage extends commonPage{
     public logInPage(){
@@ -21,6 +22,9 @@ public class logInPage extends commonPage{
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement submit;
 
+    @FindBy(css = "a.wf-main-balance__button")
+    private WebElement deposit;
+
     public void logIn(){
 
         logInButton.click();
@@ -30,5 +34,11 @@ public class logInPage extends commonPage{
         password.click();
         password.sendKeys(System.getProperty("password"));
         submit.click();
+        try{
+            Assert.assertTrue(deposit.isDisplayed());
+        }catch(Exception e){
+            prettyLog("\n" + getTime() + ": Log in failed, aborting the test" + "\n");
+            Assert.assertTrue(false);
+        }
     }
 }
