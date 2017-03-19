@@ -38,7 +38,7 @@ public class logInPage extends commonPage{
             Assert.assertTrue(deposit.isDisplayed());
         }catch(Exception e){
             prettyLog("\n" + getTime() + ": Log in failed, aborting the test" + "\n");
-            Assert.assertTrue(false);
+            Assert.assertTrue(false, "Display button not found");
         }
     }
 }
