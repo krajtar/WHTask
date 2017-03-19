@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="WilliamHillSuite">
+    <test name="WilliamHillScenario">
+        <classes>
+            <class name="Utils.cucumberRunner" />
+        </classes>
+    </test>
+</suite>
